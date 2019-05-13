@@ -102,4 +102,21 @@ class DiamondTest {
         """.trimMargin())
     }
 
+    @Test
+    fun should_create_diamonds_with_char_C() {
+        // given
+        val diamond = CharDiamond('C')
+        // when
+        val result = diamond.build()
+        // then
+        assertThat(result).isEqualTo("""
+            |__A__
+            |_B_B_
+            |C___C
+            |_B_B_
+            |__A__
+        """.trimMargin())
+    }
+
+
 }

@@ -12,7 +12,7 @@ class Diamond(size: Int) {
 
 
     companion object {
-        private val STAR = "*"
+        private val STAR = '*'
         private val SPACE = "_"
     }
 
@@ -26,22 +26,22 @@ class Diamond(size: Int) {
 
     private fun buildLines(): String {
         return (1..size).map {
-            buildLine(it)
+            buildLine(it, STAR)
         }.joinToString(separator = "\n")
     }
 
-    private fun buildLine(index: Int): String {
+    fun buildLine(index: Int, c: Char): String {
         val half = size.div(2)
         return if (index == 1 || index == size) {
-            SPACE.repeat(half) + STAR + SPACE.repeat(half)
+            SPACE.repeat(half) + c + SPACE.repeat(half)
         } else if (index <= half) {
-            val first = SPACE.repeat(half - (index - 1)) + STAR + SPACE.repeat(index - 2)
+            val first = SPACE.repeat(half - (index - 1)) + c + SPACE.repeat(index - 2)
             "$first$SPACE${first.reversed()}"
         } else if (index == half + 1) {
-            STAR + SPACE.repeat(size - 2) + STAR
+            c + SPACE.repeat(size - 2) + c
         } else {
             // if (index > half + 1)
-            buildLine(size - index + 1)
+            buildLine(size - index + 1, c)
         }
     }
 
