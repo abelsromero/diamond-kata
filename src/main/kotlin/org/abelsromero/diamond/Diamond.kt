@@ -35,13 +35,13 @@ class Diamond(size: Int) {
         return if (index == 1 || index == size) {
             SPACE.repeat(half) + STAR + SPACE.repeat(half)
         } else if (index <= half) {
-            val first = SPACE.repeat(half - (index - 1)) + STAR + SPACE.repeat(half - 1 - (half - (index - 1)))
+            val first = SPACE.repeat(half - (index - 1)) + STAR + SPACE.repeat(index - 2)
             "$first$SPACE${first.reversed()}"
         } else if (index == half + 1) {
             STAR + SPACE.repeat(size - 2) + STAR
         } else {
             // if (index > half + 1)
-            buildLine(size - index +1)
+            buildLine(size - index + 1)
         }
     }
 
