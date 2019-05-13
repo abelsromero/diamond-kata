@@ -1,0 +1,3 @@
+== Diamond Kata
+
+Kotlin implementation of the https://ronjeffries.com/articles/tdd-diamond/[Diamond Kata].
